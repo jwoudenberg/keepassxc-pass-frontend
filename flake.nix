@@ -8,7 +8,8 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        app = pkgs.haskellPackages.callCabal2nix "keepassxc-pass-frontend" ./. { };
+        app =
+          pkgs.haskellPackages.callCabal2nix "keepassxc-pass-frontend" ./. { };
       in {
         defaultPackage = pkgs.haskell.lib.justStaticExecutables app;
         devShell = pkgs.haskellPackages.shellFor {

@@ -15,7 +15,7 @@ library:
   - KeepassxcPassFrontend
   source-dirs: src
 executables:
-  keepassxc-pass-frontend:
+  pass:
     dependencies:
     - keepassxc-pass-frontend
     main: Main.hs
@@ -26,6 +26,7 @@ executables:
     - -O2
 dependencies:
 - base >= 4.10.1.0 && < 5
+- unix >= 2.7.0.0 && < 2.8
 ghc-options:
 - -Wall
 - -Werror
