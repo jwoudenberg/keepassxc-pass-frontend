@@ -1,0 +1,45 @@
+name: keepassxc-pass-frontend
+version: 0.1.0.0
+synopsis: A pass-like CLI for accessing keepassxc
+description: Please see the README at <https://github.com/jwoudenberg/keepassxc-pass-frontend>.
+author: Jasper Woudenberg
+maintainer: mail@jasperwoudenberg.com
+copyright: 2021 Jasper Woudenberg
+homepage: https://github.com/jwoudenberg/keepassxc-pass-frontend#readme
+license-file: LICENSE
+github: jwoudenberg/keepassxc-pass-frontend
+extra-doc-files:
+- README.md
+library:
+  exposed-modules:
+  - KeepassxcPassFrontend
+  source-dirs: src
+executables:
+  keepassxc-pass-frontend:
+    dependencies:
+    - keepassxc-pass-frontend
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts "-with-rtsopts=-N -T"
+    - -O2
+dependencies:
+- base >= 4.10.1.0 && < 5
+ghc-options:
+- -Wall
+- -Werror
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wpartial-fields
+- -Wredundant-constraints
+- -Wincomplete-uni-patterns
+default-extensions:
+- DeriveGeneric
+- GeneralizedNewtypeDeriving
+- NamedFieldPuns
+- NumericUnderscores
+- OverloadedStrings
+- ScopedTypeVariables
+- StrictData
